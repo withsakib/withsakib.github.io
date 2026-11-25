@@ -205,12 +205,10 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--accent-light); font-weight: 500; margin-bottom: .15rem;
 }
-.about-cards { display: flex; flex-direction: column; gap: 1.25rem; }
-.about-cards .fact-card { flex: 1; }
+.about-cards { display: flex; flex-direction: column; gap: 1.25rem; justify-content: space-between; }
 .fact-card {
   background: var(--card); border: 1px solid var(--line-soft);
   border-radius: 1rem; padding: 1.5rem 1.75rem;
-  display: flex; flex-direction: column; justify-content: center;
 }
 .fact-label {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
@@ -300,7 +298,6 @@ p:last-child { margin-bottom: 0; }
 .info-card {
   background: var(--card); border: 1px solid var(--line-soft);
   border-radius: 1rem; padding: 1.5rem 1.75rem;
-  flex: 1; display: flex; flex-direction: column; justify-content: center;
 }
 .info-card .fact-value { font-size: 1.05rem; }
 .copy-btn {
