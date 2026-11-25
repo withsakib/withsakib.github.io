@@ -191,7 +191,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* About */
-.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: stretch; }
 .about-text p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
 .about-text h2 { margin-bottom: 1.25rem; }
 .facts {
@@ -206,9 +206,11 @@ p:last-child { margin-bottom: 0; }
   color: var(--accent-light); font-weight: 500; margin-bottom: .15rem;
 }
 .about-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+.about-cards .fact-card { flex: 1; }
 .fact-card {
   background: var(--card); border: 1px solid var(--line-soft);
   border-radius: 1rem; padding: 1.5rem 1.75rem;
+  display: flex; flex-direction: column; justify-content: center;
 }
 .fact-label {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
@@ -277,7 +279,7 @@ p:last-child { margin-bottom: 0; }
 .project-links a:hover { color: #c4b5fd; border-color: #c4b5fd; }
 
 /* Contact */
-.contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+.contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: stretch; margin-top: 2.5rem; }
 #contact-form { display: flex; flex-direction: column; }
 #contact-form label { display: block; font-size: .95rem; font-weight: 500; margin: 0 0 .4rem; }
 #contact-form label:not(:first-child) { margin-top: 1.1rem; }
@@ -294,10 +296,11 @@ p:last-child { margin-bottom: 0; }
 }
 #contact-form textarea { flex: 1; min-height: 140px; }
 #contact-form button { margin-top: 1.25rem; align-self: flex-start; }
-.contact-side { display: flex; flex-direction: column; gap: 1.5rem; justify-content: flex-start; }
+.contact-side { display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between; }
 .info-card {
   background: var(--card); border: 1px solid var(--line-soft);
   border-radius: 1rem; padding: 1.5rem 1.75rem;
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
 }
 .info-card .fact-value { font-size: 1.05rem; }
 .copy-btn {
