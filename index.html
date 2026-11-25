@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Al Sakib — Full Stack Web Developer</title>
+<meta name="description" content="Portfolio of Abdullah Al Sakib, a web developer from Dhaka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<header id="header">
+  <div class="wrap nav-wrap">
+    <a href="#home" class="logo">Abdullah Sakib<span class="logo-dot">.</span></a>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a class="nav-contact" href="#contact">Contact</a>
+    </nav>
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Hello, I&rsquo;m</p>
+        <h1>Abdullah<br>Al Sakib</h1>
+        <p class="typing"><span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="hero-intro">I build clean, responsive websites and web apps, and I&rsquo;m working my way up to full-stack development one project at a time.</p>
+        <div class="hero-cta">
+          <a class="btn btn-fill" href="#projects">View projects</a>
+          <a class="btn btn-line" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/photo-portrait.jpg" alt="Portrait of Abdullah Al Sakib" width="440" height="480">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="wrap about-grid">
+      <div class="about-text" data-reveal>
+        <p class="kicker">About</p>
+        <h2>A developer who learns by building</h2>
+        <p>I&rsquo;m Abdullah Al Sakib, 17, from Dhaka. I work with HTML, CSS, JavaScript, Bootstrap and Tailwind, and I&rsquo;m now exploring PHP and Laravel as I move toward full-stack development.</p>
+        <p>I learn by building: I study a topic, then make something real with it. My first real product is KeyVEX, an offline password manager. I started with vanilla JavaScript before React and Node.js, and I only go deeper when I get stuck.</p>
+        <ul class="facts">
+          <li><span>Age</span>17</li>
+          <li><span>From</span>Dhaka, Bangladesh</li>
+          <li><span>GitHub</span><a href="https://github.com/abdullahsakib1" target="_blank" rel="noopener">abdullahsakib1</a></li>
+        </ul>
+      </div>
+      <div class="about-cards">
+        <div class="fact-card card-glow" data-reveal style="--i:1">
+          <p class="fact-label">Focus</p>
+          <p class="fact-value">Responsive websites &amp; web apps</p>
+        </div>
+        <div class="fact-card card-glow" data-reveal style="--i:2">
+          <p class="fact-label">Right now</p>
+          <p class="fact-value">Deepening JavaScript</p>
+        </div>
+        <div class="fact-card card-glow" data-reveal style="--i:3">
+          <p class="fact-label">Next up</p>
+          <p class="fact-value">PHP &amp; Laravel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-alt">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="kicker">Skills</p>
+        <h2>My toolbox</h2>
+        <p class="section-sub">The tools I use every day. The list keeps growing.</p>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card card-glow" data-reveal style="--i:0">
+          <img src="images/logos/html5.svg" alt="HTML5 logo" width="48" height="48" loading="lazy">
+          <p class="skill-tag">Markup</p>
+          <h3>HTML</h3>
+          <p>Semantic markup that reads clean and works everywhere.</p>
+        </article>
+        <article class="skill-card card-glow" data-reveal style="--i:1">
+          <img src="images/logos/css3.svg" alt="CSS3 logo" width="48" height="48" loading="lazy">
+          <p class="skill-tag">Styling</p>
+          <h3>CSS</h3>
+          <p>Layouts, responsive design and the small details that make a page feel finished.</p>
+        </article>
+        <article class="skill-card card-glow" data-reveal style="--i:2">
+          <img src="images/logos/javascript.svg" alt="JavaScript logo" width="48" height="48" loading="lazy">
+          <p class="skill-tag">Logic</p>
+          <h3>JavaScript</h3>
+          <p>Interactive pages, DOM work, ES6+ and fetching data from APIs.</p>
+        </article>
+        <article class="skill-card card-glow" data-reveal style="--i:3">
+          <img src="images/logos/bootstrap.svg" alt="Bootstrap logo" width="48" height="48" loading="lazy">
+          <p class="skill-tag">Framework</p>
+          <h3>Bootstrap</h3>
+          <p>Fast, consistent layouts when a project needs to move quickly.</p>
+        </article>
+        <article class="skill-card card-glow" data-reveal style="--i:4">
+          <img src="images/logos/tailwindcss.svg" alt="Tailwind CSS logo" width="48" height="48" loading="lazy">
+          <p class="skill-tag">Utility-first</p>
+          <h3>Tailwind</h3>
+          <p>Utility-first styling for precise, maintainable designs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="kicker">Projects</p>
+        <h2>Things I&rsquo;ve built</h2>
+      </div>
+      <article class="project-featured card-glow" data-reveal>
+        <p class="project-tag">Featured project</p>
+        <h3>KeyVEX</h3>
+        <p>An offline-first password manager. PIN-locked vault, AES-256 encryption, works with no connection and syncs when you&rsquo;re back online.</p>
+        <ul class="chips">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://keyvex.netlify.app/" target="_blank" rel="noopener">Live site &rarr;</a>
+          <a href="https://github.com/abdullahsakib1/keyVEX" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-alt">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="kicker">Contact</p>
+        <h2>Let&rsquo;s work together</h2>
+        <p class="section-sub">Have a project in mind, or just want to say hello? My inbox is open and I usually reply within a day.</p>
+      </div>
+      <div class="contact-grid">
+        <form id="contact-form" data-reveal>
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" placeholder="Your name" required>
+          <label for="f-email">Your email</label>
+          <input id="f-email" name="email" type="email" placeholder="you@example.com" required>
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          <button class="btn btn-fill" type="submit">Send message</button>
+        </form>
+        <div class="contact-side">
+          <div class="info-card card-glow" data-reveal style="--i:1">
+            <p class="fact-label">Email</p>
+            <p class="fact-value">abdullahsakiib@gmail.com</p>
+            <button class="copy-btn" type="button" id="copy-email">Copy email</button>
+          </div>
+          <div class="connect" data-reveal style="--i:2">
+            <p class="fact-label">Connect with me</p>
+            <div class="social-row">
+              <a href="https://github.com/abdullahsakib1" target="_blank" rel="noopener" aria-label="GitHub"><img src="images/logos/github.svg" alt="" width="20" height="20"><span>GitHub</span></a>
+              <a href="https://www.instagram.com/abdullahsakiib1" target="_blank" rel="noopener" aria-label="Instagram abdullahsakiib1"><img src="images/logos/instagram.svg" alt="" width="20" height="20"><span>Instagram</span></a>
+              <a href="https://www.instagram.com/sakib4suree" target="_blank" rel="noopener" aria-label="Instagram sakib4suree"><img src="images/logos/instagram.svg" alt="" width="20" height="20"><span>@sakib4suree</span></a>
+              <a href="https://www.facebook.com/sakib4suree" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/logos/facebook.svg" alt="" width="20" height="20"><span>Facebook</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Abdullah Al Sakib. Build, Grow, Serve.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
