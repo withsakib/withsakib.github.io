@@ -52,8 +52,11 @@ function startTyping() {
 function setupReveals() {
   const items = document.querySelectorAll("[data-reveal]");
 
+  // Once a card has finished its entrance, mark it .done so hover effects aren't delayed.
+  const markDone = (el) => setTimeout(() => el.classList.add("done"), 1000);
+
   if (reduceMotion || !("IntersectionObserver" in window)) {
-    items.forEach((el) => el.classList.add("visible"));
+    items.forEach((el) => { el.classList.add("visible"); markDone(el); });
     return;
   }
 
@@ -62,6 +65,7 @@ function setupReveals() {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("visible");
+        markDone(entry.target);
         observer.unobserve(entry.target);
       });
     },
@@ -177,8 +181,9 @@ function setupCopyEmail() {
   const email = "abdullahsakiib@gmail.com";
 
   function showCopied() {
-    btn.textContent = "Copied!";
-    setTimeout(() => { btn.textContent = "Copy email"; }, 1600);
+    btn.textContent = "\u2713 Copied";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = "Copy email"; btn.classList.remove("copied"); }, 1800);
   }
 
   btn.addEventListener("click", () => {
@@ -203,6 +208,9 @@ function setupContactForm() {
 
     const body = "Hi Abdullah,\n\n" + message + "\n\n— " + name + " (" + email + ")";
     const subject = "Portfolio contact from " + name;
+
+    const note = document.getElementById("form-note");
+    if (note) note.textContent = "Opening your mail app\u2026";
 
     window.location.href =
       "mailto:abdullahsakiib@gmail.com" +
