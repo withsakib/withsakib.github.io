@@ -1,0 +1,17 @@
+/* ------------------------------------------------------------------
+   Card glow: a soft light that follows the mouse across a card.
+   The --mx / --my values are updated from js/interactions.js
+------------------------------------------------------------------- */
+
+.card-glow { position: relative; overflow: hidden; }
+
+.card-glow::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
+              rgba(30, 58, 110, .07), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.card-glow:hover::before { opacity: 1; }

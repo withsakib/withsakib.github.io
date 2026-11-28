@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------
+   Layout helpers shared by every section
+------------------------------------------------------------------- */
+
+/* Centered content column */
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Each full-width band of the page */
+.section { padding: 6rem 0; }
+
+.section-alt { background: var(--paper-deep); }
+
+.section-dark { background: var(--ink-900); color: #fff; }
+.section-dark h2 { color: #fff; }
+.section-dark strong { color: #fff; }
+.section-dark .kicker { color: var(--gold); }
+.section-dark .section-sub { color: var(--ink-300); }
+
+@media (max-width: 760px) {
+  .section { padding: 4.5rem 0; }
+}

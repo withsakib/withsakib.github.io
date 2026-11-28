@@ -1,0 +1,140 @@
+/* ------------------------------------------------------------------
+   Hero: name, typing line, intro, buttons and the portrait
+------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: flex; align-items: center;
+  min-height: 88vh;
+  padding: 6.75rem 0 5rem;
+  /* A faint blue wash behind the photo so it blends into the page */
+  background:
+    radial-gradient(60rem 36rem at 88% 40%, rgba(202, 217, 223, .55), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9fb 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* "Hello, I'm" with a gold tick in front */
+.hero-eyebrow {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 1.4rem;
+  font-family: var(--mono);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 1.75rem; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* Name: first line light, second line a bit heavier */
+.hero h1 {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 5.4vw, 5.6rem);
+  line-height: 1.06;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.h1-light { font-weight: 300; }
+.h1-strong { font-weight: 600; }
+
+/* "I am a Web Developer" line (words are typed by js/typing.js) */
+.typing {
+  min-height: 1.6em;
+  margin: 1.5rem 0 0;
+  font-family: var(--body);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-400);
+}
+.typing-static { color: var(--ink); font-style: normal; }
+
+.caret {
+  display: inline-block;
+  width: 2px; height: 1.2em;
+  margin-left: 2px;
+  background: var(--ink-400);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-intro {
+  max-width: 34rem;
+  margin-top: 1.4rem;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+.hero-cta .btn { padding: .95rem 1.9rem; font-size: 1.02rem; }
+
+/* Portrait
+   The photo's backdrop is the same pale blue-grey as the About picture, and it
+   gets the same dashed frame and rounded corners so the two read as a pair. */
+.hero-photo { position: relative; width: fit-content; margin: 0 auto; }
+
+.hero-photo::after {      /* dashed frame sitting just outside the photo */
+  content: "";
+  position: absolute; inset: -12px;
+  border: 1.5px dashed var(--line-dash);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.hero-photo img {
+  position: relative; z-index: 1;
+  width: 440px; max-width: 100%; height: 480px;
+  object-fit: cover; object-position: top center;
+  border-radius: 12px;
+  background: var(--wash);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Little location pill on the bottom-left of the photo */
+.photo-chip {
+  position: absolute; z-index: 2; left: 1rem; bottom: 1rem;
+  display: inline-flex; align-items: center; gap: .55rem;
+  margin: 0;
+  padding: .4rem .85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(6px);
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.chip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(233, 184, 92, .28);
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 0; padding: 6.25rem 0 4rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-photo img { width: 320px; height: 360px; }
+  .photo-chip { left: .75rem; bottom: .75rem; }
+}

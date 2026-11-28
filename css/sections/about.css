@@ -1,0 +1,72 @@
+/* ------------------------------------------------------------------
+   About: text on the left, typing illustration on the right
+------------------------------------------------------------------- */
+
+/* The background fades from the illustration's own blue-grey down to
+   near-white, so the picture blends in instead of sitting in a box. */
+.section-about {
+  background: linear-gradient(180deg, var(--wash) 0%, #dde8ec 55%, #fdfdfd 100%);
+}
+.section-about .kicker,
+.section-about .facts li span { color: var(--ink-500); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 3rem;
+}
+
+.about-kicker { grid-column: 1 / -1; grid-row: 1; }
+
+.about-main { grid-column: 1; grid-row: 2; padding-bottom: 1.75rem; }
+.about-main h2 { margin-bottom: 1.25rem; }
+.about-main p {
+  color: var(--ink-600);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Quick facts under the text */
+.facts {
+  grid-column: 1; grid-row: 3;
+  display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem;
+  margin: 0; padding: 1.25rem 0 0;
+  list-style: none;
+  border-top: 1px dashed var(--line-dash);
+}
+.facts li { font-weight: 500; color: var(--ink); }
+.facts li span {
+  display: block;
+  margin-bottom: .15rem;
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.facts a { color: var(--ink); }
+.facts a:hover { color: var(--ink-900); }
+
+/* Illustration frame */
+.work-slot {
+  grid-column: 2; grid-row: 2;
+  min-height: 26rem;
+  margin-top: .35rem;
+  overflow: hidden;
+  background: var(--paper-soft);
+  border: 1.5px dashed var(--line-dash);
+  border-radius: 12px;
+}
+.work-slot img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+  .about-kicker, .about-main, .work-slot, .facts { grid-column: 1; grid-row: auto; }
+  .about-main { padding-bottom: 0; }
+  .work-slot { min-height: 20rem; margin: 1.75rem 0; }
+}

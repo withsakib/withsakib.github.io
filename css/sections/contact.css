@@ -1,0 +1,160 @@
+/* ------------------------------------------------------------------
+   Contact: dark navy section with the form on the left and
+   email + social links on the right
+------------------------------------------------------------------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  grid-template-rows: auto auto;
+  gap: 0 3rem;
+  margin-top: 2.5rem;
+}
+
+#contact-form { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; }
+.connect      { grid-column: 2; grid-row: 1; }
+.form-actions { grid-column: 1; grid-row: 2; }
+
+/* Form */
+#contact-form label {
+  display: block;
+  margin: 0 0 .4rem;
+  font-size: .92rem;
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: #fff;
+}
+#contact-form label:not(:first-child) { margin-top: 1.1rem; }
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+  font-family: var(--body);
+  font-size: .95rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#contact-form input::placeholder,
+#contact-form textarea::placeholder { color: var(--ink-300); }
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--ink-300);
+  box-shadow: 0 0 0 3px rgba(169, 189, 221, .3);
+}
+#contact-form textarea { flex: 1; min-height: 140px; }
+
+.form-actions {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;
+  margin-top: 1.25rem;
+}
+.form-note { margin: 0; font-size: .9rem; color: var(--gold); }
+
+/* Right-hand card */
+.connect {
+  display: flex; flex-direction: column; gap: 1.5rem;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 12px;
+}
+
+.fact-label {
+  margin-bottom: .4rem;
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.fact-value {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.copy-btn {
+  margin-top: 1rem;
+  min-height: 2.5rem;
+  padding: .55rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+  font-family: var(--body);
+  font-size: .9rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: border-color .2s ease, transform .2s ease, background .2s ease, color .2s ease;
+}
+.copy-btn:hover { border-color: var(--ink-300); transform: translateY(-1px); }
+.copy-btn.copied {                    /* class added by js/interactions.js */
+  border-color: var(--gold);
+  background: rgba(233, 184, 92, .12);
+  color: var(--gold);
+}
+
+/* Social links */
+.social-block {
+  flex: 1;
+  display: flex; flex-direction: column;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(255, 255, 255, .16);
+}
+.social-block .fact-label { margin-bottom: 1rem; }
+
+.social-list { flex: 1; display: flex; flex-direction: column; gap: .75rem; }
+
+.social-list a {
+  flex: 1;
+  display: flex; align-items: center; gap: .9rem;
+  min-height: 3rem;
+  padding: .85rem 1.15rem;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: transform .25s var(--ease), border-color .2s ease, background .2s ease;
+}
+.social-list a:hover {
+  transform: translateX(4px);
+  border-color: var(--ink-300);
+  background: rgba(169, 189, 221, .12);
+  color: #fff;
+}
+.social-list img {
+  flex: none;
+  width: 22px; height: 22px;
+  filter: brightness(0) invert(1);      /* turns the dark icons white */
+}
+.social-list span { flex: 1; }
+
+.social-list .arrow {
+  font-style: normal;
+  font-size: 1.1rem;
+  color: var(--ink-300);
+  transition: transform .25s var(--ease), color .2s ease;
+}
+.social-list a:hover .arrow { transform: translate(2px, -2px); color: var(--gold); }
+
+@media (max-width: 760px) {
+  /* Stack: form, send button, then the contact card */
+  .contact-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 0; }
+  #contact-form, .connect, .form-actions { grid-column: 1; grid-row: auto; }
+  #contact-form { order: 1; }
+  .form-actions { order: 2; margin-top: 1.25rem; }
+  .connect { order: 3; margin-top: 2rem; }
+}

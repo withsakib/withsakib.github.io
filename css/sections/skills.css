@@ -1,0 +1,79 @@
+/* ------------------------------------------------------------------
+   Skills: one card per tool, plus a "learning next" line
+------------------------------------------------------------------- */
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.skill-card {
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.skill-card img {
+  width: 52px; height: 52px;
+  object-fit: contain;
+  margin-bottom: 1.1rem;
+  transition: transform .4s var(--ease);
+}
+.skill-card:hover img { transform: scale(1.12) rotate(-4deg); }
+
+.skill-tag {
+  margin-bottom: .4rem;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.skill-card h3 { margin-bottom: .45rem; font-size: 1.3rem; }
+
+.skill-card p:last-child {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* "Learning next: PHP and Laravel" */
+.learning {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem;
+  margin: 2rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--line-dash);
+  color: var(--ink-600);
+  font-weight: 500;
+}
+.learning span {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+/* Tablet: 3 cards on the first row, 2 wider ones below */
+@media (max-width: 1000px) {
+  .skill-grid { grid-template-columns: repeat(6, 1fr); }
+  .skill-card { grid-column: span 2; }
+  .skill-card:nth-child(4),
+  .skill-card:nth-child(5) { grid-column: span 3; }
+}
+
+/* Phone: two columns, last card full width */
+@media (max-width: 760px) {
+  .skill-grid { grid-template-columns: 1fr 1fr; }
+  .skill-card,
+  .skill-card:nth-child(4) { grid-column: auto; }
+  .skill-card:nth-child(5) { grid-column: span 2; }
+  .skill-card { padding: 1.15rem; }
+  .skill-card h3 { font-size: 1.05rem; }
+}

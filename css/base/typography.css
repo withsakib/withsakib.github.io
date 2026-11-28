@@ -1,0 +1,57 @@
+/* ------------------------------------------------------------------
+   Typography
+
+   Not everything should shout, so the weights are spread out:
+     Anton (already very bold) ..... section titles only
+     Fraunces 600 .................. card titles, "Al Sakib", <strong>
+     Fraunces 500 .................. nav, facts, buttons, email
+     Fraunces 400 / Mono 400 ....... paragraphs, small labels
+     Fraunces 300 .................. "Abdullah" in the hero
+------------------------------------------------------------------- */
+
+h1, h2, h3 { margin: 0; line-height: 1.1; }
+
+/* Section titles: the one loud thing in each section */
+h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: .005em;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+  margin: 0 0 .85rem;
+}
+
+/* Card titles */
+h3 {
+  font-family: var(--body);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+strong { font-weight: 600; color: var(--ink); }
+
+/* Small monospace label above each section title, with a gold tick */
+.kicker {
+  display: flex; align-items: center; gap: .75rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin: 0 0 .75rem;
+}
+.kicker::before {
+  content: "";
+  flex: none;
+  width: 1.75rem; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 38rem;
+  font-size: 1.05rem;
+}

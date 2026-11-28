@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------
+   Tokens
+   Every colour, font and shadow lives here so the rest of the CSS can
+   just say var(--something). Change a value once and the whole site
+   follows.
+
+   Theme taken from Khalid Farhan's site: navy ink, one gold accent,
+   dashed dividers and slow, calm motion.
+------------------------------------------------------------------- */
+
+:root {
+  /* Backgrounds */
+  --paper: #ffffff;
+  --paper-soft: #f7f9fc;
+  --paper-deep: #f2f5fa;
+  --wash: #cad9df;        /* pale blue-grey, sampled from the About illustration */
+
+  /* Navy ink, from darkest to lightest */
+  --ink-900: #0e1f4a;
+  --ink: #1e3a6e;
+  --ink-600: #2e4f8c;
+  --ink-500: #4a66a0;
+  --ink-400: #5b7cb8;
+  --ink-300: #a9bddd;
+
+  /* Accent: use sparingly, it's only for small details */
+  --gold: #e9b85c;
+
+  /* Roles */
+  --text: var(--ink);
+  --muted: #4d6a9f;       /* body copy on light backgrounds */
+  --line: #e2e7f0;
+  --line-dash: #a9bddd;
+
+  /* Fonts */
+  --display: "Anton", "Arial Narrow", sans-serif;
+  --body: "Fraunces", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Depth and motion */
+  --shadow: 0 12px 32px -12px rgba(14, 31, 74, .28);
+  --shadow-lg: 0 22px 48px -18px rgba(14, 31, 74, .38);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}

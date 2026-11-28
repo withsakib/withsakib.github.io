@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Al Sakib — Full Stack Web Developer</title>
-<meta name="description" content="Portfolio of Abdullah Al Sakib, a web developer from Dhaka.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#1e3a6e">
+
+  <title>Abdullah Al Sakib — Full Stack Web Developer</title>
+  <meta name="description" content="Portfolio of Abdullah Al Sakib, a web developer from Dhaka. HTML, CSS, JavaScript, Bootstrap and Tailwind, and the offline password manager KeyVEX.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdullah Al Sakib — Full Stack Web Developer">
+  <meta property="og:description" content="Clean, responsive websites and web apps. See my projects and get in touch.">
+
+  <!-- Tiny inline favicon so the browser doesn't look for a favicon.ico -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%231e3a6e%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-family=%27Georgia,serif%27 font-size=%2738%27 font-weight=%27600%27 text-anchor=%27middle%27 fill=%27%23ffffff%27%3EA%3C/text%3E%3Ccircle cx=%2750%27 cy=%2748%27 r=%275%27 fill=%27%23e9b85c%27/%3E%3C/svg%3E">
+
+  <!-- Fonts: Anton for section titles, Fraunces for text, JetBrains Mono for small labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/images/portrait.jpg">
+
+  <!-- Lets the CSS know JavaScript is running, so scroll animations only
+       hide things when they can actually be revealed again -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Styles: base first, then components, then each section, motion last -->
+  <link rel="stylesheet" href="css/base/tokens.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  <link rel="stylesheet" href="css/base/layout.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/card-glow.css">
+  <link rel="stylesheet" href="css/sections/hero.css">
+  <link rel="stylesheet" href="css/sections/about.css">
+  <link rel="stylesheet" href="css/sections/skills.css">
+  <link rel="stylesheet" href="css/sections/projects.css">
+  <link rel="stylesheet" href="css/sections/contact.css">
+  <link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="progress" aria-hidden="true"></div>
 
 <header id="header">
   <div class="wrap nav-wrap">
-    <a href="#home" class="logo">Abdullah Sakib<span class="logo-dot">.</span></a>
-    <nav id="nav">
+    <a href="#home" class="logo" aria-label="Sa Kib, home">Sa Kib<span class="logo-dot">.</span></a>
+    <nav id="nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -30,55 +62,47 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
         <p class="hero-eyebrow">Hello, I&rsquo;m</p>
-        <h1>Abdullah<br>Al Sakib</h1>
-        <p class="typing"><span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></p>
-        <p class="hero-intro">I build clean, responsive websites and web apps, and I&rsquo;m working my way up to full-stack development one project at a time.</p>
+        <h1><span class="h1-light">Abdullah</span><br><span class="h1-strong">Al Sakib</span></h1>
+        <p class="typing"><span class="typing-static">I am a&nbsp;</span><span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="hero-intro">I build <strong>clean, responsive websites</strong> and web apps, and I&rsquo;m working my way up to <strong>full-stack development</strong> one project at a time.</p>
         <div class="hero-cta">
           <a class="btn btn-fill" href="#projects">View projects</a>
           <a class="btn btn-line" href="#contact">Contact me</a>
         </div>
       </div>
       <div class="hero-photo">
-        <img src="images/photo-portrait.jpg" alt="Portrait of Abdullah Al Sakib" width="440" height="480">
+        <img src="assets/images/portrait.jpg" alt="Portrait of Abdullah Al Sakib" width="440" height="480" fetchpriority="high">
+        <p class="photo-chip"><span class="chip-dot" aria-hidden="true"></span>Dhaka, Bangladesh</p>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="section">
-    <div class="wrap about-grid">
-      <p class="kicker about-kicker" data-reveal>About</p>
-      <div class="about-main" data-reveal>
-        <h2>A developer who learns by building</h2>
-        <p>I&rsquo;m Abdullah Al Sakib, 17, from Dhaka. I work with HTML, CSS, JavaScript, Bootstrap and Tailwind, and I&rsquo;m now exploring PHP and Laravel as I move toward full-stack development.</p>
-        <p>I learn by building: I study a topic, then make something real with it. My first real product is KeyVEX, an offline password manager. I started with vanilla JavaScript before React and Node.js, and I only go deeper when I get stuck.</p>
+  <section id="about" class="section section-about">
+    <div class="wrap">
+      <div class="about-grid">
+        <p class="kicker about-kicker" data-reveal>About</p>
+        <div class="about-main" data-reveal>
+          <h2>A developer who learns by building</h2>
+          <p>I&rsquo;m Abdullah Al Sakib, 17, from Dhaka. I work with <strong>HTML, CSS, JavaScript, Bootstrap and Tailwind</strong>, and I&rsquo;m now exploring <strong>PHP and Laravel</strong> as I move toward full-stack development.</p>
+          <p>I learn by building: I study a topic, then make something real with it. My first real product is <strong>KeyVEX</strong>, an offline password manager. I started with vanilla JavaScript before React and Node.js, and I only go deeper when I get stuck.</p>
+        </div>
+        <div class="work-slot" data-reveal style="--i:1">
+          <img src="assets/images/about-working.gif" alt="Animated illustration of a developer typing on a laptop">
+        </div>
+        <ul class="facts" data-reveal style="--i:1">
+          <li><span>Age</span>17</li>
+          <li><span>From</span>Dhaka, Bangladesh</li>
+          <li><span>GitHub</span><a href="https://github.com/abdullahsakiib" target="_blank" rel="noopener noreferrer">abdullahsakiib</a></li>
+        </ul>
       </div>
-      <div class="about-cards">
-        <div class="fact-card card-glow" data-reveal style="--i:1">
-          <p class="fact-label">Focus</p>
-          <p class="fact-value">Responsive websites &amp; web apps</p>
-        </div>
-        <div class="fact-card card-glow" data-reveal style="--i:2">
-          <p class="fact-label">Right now</p>
-          <p class="fact-value">Deepening JavaScript</p>
-        </div>
-        <div class="fact-card card-glow" data-reveal style="--i:3">
-          <p class="fact-label">Next up</p>
-          <p class="fact-value">PHP &amp; Laravel</p>
-        </div>
-      </div>
-      <ul class="facts" data-reveal style="--i:1">
-        <li><span>Age</span>17</li>
-        <li><span>From</span>Dhaka, Bangladesh</li>
-        <li><span>GitHub</span><a href="https://github.com/abdullahsakib1" target="_blank" rel="noopener">abdullahsakib1</a></li>
-      </ul>
     </div>
   </section>
 
@@ -92,36 +116,37 @@
       </div>
       <div class="skill-grid">
         <article class="skill-card card-glow" data-reveal style="--i:0">
-          <img src="images/logos/html5.svg" alt="HTML5 logo" width="48" height="48" loading="lazy">
+          <img src="assets/icons/html5.svg" alt="HTML5 logo" width="48" height="48" loading="lazy">
           <p class="skill-tag">Markup</p>
           <h3>HTML</h3>
           <p>Semantic markup that reads clean and works everywhere.</p>
         </article>
         <article class="skill-card card-glow" data-reveal style="--i:1">
-          <img src="images/logos/css3.svg" alt="CSS3 logo" width="48" height="48" loading="lazy">
+          <img src="assets/icons/css3.svg" alt="CSS3 logo" width="48" height="48" loading="lazy">
           <p class="skill-tag">Styling</p>
           <h3>CSS</h3>
           <p>Layouts, responsive design and the small details that make a page feel finished.</p>
         </article>
         <article class="skill-card card-glow" data-reveal style="--i:2">
-          <img src="images/logos/javascript.svg" alt="JavaScript logo" width="48" height="48" loading="lazy">
+          <img src="assets/icons/javascript.svg" alt="JavaScript logo" width="48" height="48" loading="lazy">
           <p class="skill-tag">Logic</p>
           <h3>JavaScript</h3>
           <p>Interactive pages, DOM work, ES6+ and fetching data from APIs.</p>
         </article>
         <article class="skill-card card-glow" data-reveal style="--i:3">
-          <img src="images/logos/bootstrap.svg" alt="Bootstrap logo" width="48" height="48" loading="lazy">
+          <img src="assets/icons/bootstrap.svg" alt="Bootstrap logo" width="48" height="48" loading="lazy">
           <p class="skill-tag">Framework</p>
           <h3>Bootstrap</h3>
           <p>Fast, consistent layouts when a project needs to move quickly.</p>
         </article>
         <article class="skill-card card-glow" data-reveal style="--i:4">
-          <img src="images/logos/tailwindcss.svg" alt="Tailwind CSS logo" width="48" height="48" loading="lazy">
+          <img src="assets/icons/tailwindcss.svg" alt="Tailwind CSS logo" width="48" height="48" loading="lazy">
           <p class="skill-tag">Utility-first</p>
           <h3>Tailwind</h3>
           <p>Utility-first styling for precise, maintainable designs.</p>
         </article>
       </div>
+      <p class="learning" data-reveal><span>Learning next</span>PHP and Laravel</p>
     </div>
   </section>
 
@@ -140,15 +165,15 @@
           <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li>
         </ul>
         <div class="project-links">
-          <a href="https://keyvex.netlify.app/" target="_blank" rel="noopener">Live site &rarr;</a>
-          <a href="https://github.com/abdullahsakib1/keyVEX" target="_blank" rel="noopener">GitHub &rarr;</a>
+          <a href="https://keyvex.netlify.app/" target="_blank" rel="noopener noreferrer">Live site &rarr;</a>
+          <a href="https://github.com/abdullahsakiib/keyVEX" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
         </div>
       </article>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section section-alt">
+  <section id="contact" class="section section-dark">
     <div class="wrap">
       <div data-reveal>
         <p class="kicker">Contact</p>
@@ -158,9 +183,9 @@
       <div class="contact-grid">
         <form id="contact-form" data-reveal>
           <label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" placeholder="Your name" required>
+          <input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
           <label for="f-email">Your email</label>
-          <input id="f-email" name="email" type="email" placeholder="you@example.com" required>
+          <input id="f-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
           <label for="f-message">Message</label>
           <textarea id="f-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
         </form>
@@ -173,9 +198,9 @@
           <div class="social-block">
             <p class="fact-label">Connect with me</p>
             <div class="social-list">
-              <a href="https://github.com/abdullahsakib1" target="_blank" rel="noopener"><img src="images/logos/github.svg" alt="" width="22" height="22"><span>GitHub</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
-              <a href="https://www.instagram.com/abdullahsakiib1" target="_blank" rel="noopener"><img src="images/logos/instagram.svg" alt="" width="22" height="22"><span>Instagram</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
-              <a href="https://www.facebook.com/sakib4suree" target="_blank" rel="noopener"><img src="images/logos/facebook.svg" alt="" width="22" height="22"><span>Facebook</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
+              <a href="https://github.com/abdullahsakiib" target="_blank" rel="noopener noreferrer"><img src="assets/icons/github.svg" alt="" width="22" height="22"><span>GitHub</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
+              <a href="https://www.instagram.com/abdullahsakiib1" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.svg" alt="" width="22" height="22"><span>Instagram</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
+              <a href="https://www.facebook.com/sakib4suree" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook.svg" alt="" width="22" height="22"><span>Facebook</span><i class="arrow" aria-hidden="true">&nearr;</i></a>
             </div>
           </div>
         </div>
@@ -190,9 +215,18 @@
 </main>
 
 <footer>
-  <p>&copy; 2026 Abdullah Al Sakib. Build, Grow, Serve.</p>
+  <div class="wrap footer-row">
+    <p>&copy; 2026 Abdullah Al Sakib. Build, Grow, Serve.</p>
+    <a class="to-top" href="#home">Back to top &uarr;</a>
+  </div>
 </footer>
 
-<script src="js/main.js"></script>
+<!-- Scripts: small and separate, each one handles a single job -->
+<script src="js/utils.js"></script>
+<script src="js/typing.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/header.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/contact-form.js"></script>
 </body>
 </html>

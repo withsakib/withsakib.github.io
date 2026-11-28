@@ -1,0 +1,61 @@
+/* ------------------------------------------------------------------
+   Motion: scroll reveals, the hero entrance and hover lifts.
+   Keep this file last so it wins over the section styles.
+------------------------------------------------------------------- */
+
+/* Scroll reveal
+   Anything with data-reveal starts slightly low and faded. js/reveal.js adds
+   .visible when it scrolls into view, then .done a moment later. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px) scale(.98);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  transition-delay: calc(var(--i, 0) * 60ms);   /* --i staggers items in a row */
+}
+.js [data-reveal].visible { opacity: 1; transform: none; }
+
+/* Once the reveal has finished, switch to the quicker hover transitions */
+.js [data-reveal].done {
+  transition: transform .35s var(--ease), border-color .25s ease,
+              box-shadow .3s ease, background .2s ease;
+  transition-delay: 0s;
+}
+
+/* Cards lift a little on hover (only after they've been revealed) */
+.skill-card.done:hover,
+.connect.done:hover,
+.project-featured.done:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-dash);
+  box-shadow: var(--shadow);
+}
+
+/* Hero entrance: each line fades up one after the other */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes photoIn {
+  from { opacity: 0; transform: translateX(24px) scale(.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero-text > * { animation: fadeUp .7s var(--ease) both; }
+.hero-text > *:nth-child(2) { animation-delay: .08s; }
+.hero-text > *:nth-child(3) { animation-delay: .16s; }
+.hero-text > *:nth-child(4) { animation-delay: .24s; }
+.hero-text > *:nth-child(5) { animation-delay: .32s; }
+.hero-photo { animation: photoIn .9s var(--ease) .2s both; }
+
+/* People who ask their device for less motion get none */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .caret { animation: none; }
+  .hero-text > *, .hero-photo { animation: none; }
+  .card-glow::before { display: none; }
+  .skill-card.done:hover,
+  .connect.done:hover,
+  .project-featured.done:hover,
+  .social-list a:hover { transform: none; }
+}

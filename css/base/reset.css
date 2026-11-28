@@ -1,0 +1,51 @@
+/* ------------------------------------------------------------------
+   Reset and page defaults
+------------------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;   /* keeps anchored sections clear of the fixed header */
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--ink); color: #fff; }
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--ink-600);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover { color: var(--ink-900); }
+
+p { margin: 0 0 1rem; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible { outline: 2px solid var(--ink-400); outline-offset: 3px; }
+
+/* Comfortable tap targets for anything clickable */
+button, [role="button"], select, summary,
+input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+
+/* "Skip to content" link for keyboard users. Hidden until it gets focus. */
+.skip-link {
+  position: fixed; top: .75rem; left: .75rem; z-index: 100;
+  padding: .6rem 1rem; border-radius: 999px;
+  background: var(--ink); color: #fff; font-size: .9rem;
+  transform: translateY(-200%);
+  transition: transform .2s var(--ease);
+}
+.skip-link:focus { transform: none; color: #fff; }
