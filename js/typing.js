@@ -6,7 +6,7 @@
   if (!target) return;
 
   // Edit this list to change what the hero says
-  const words = ["Web Developer", "Full Stack Web Developer", "Learner", "Student"];
+  const words = ["Web Developer", "Learner", "Student"];
 
   const typeSpeed = 70;      // ms per letter while typing
   const deleteSpeed = 35;    // ms per letter while deleting
